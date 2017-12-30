@@ -1,0 +1,24 @@
+<div class="login-container" layout-align-xs>
+  <mat-card class="form-card">
+    <mat-card-title>
+      <h1>Zappy</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h2>The Pain Killer</h2>
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf='message' style="color: red;">{{ message }}</mat-card-subtitle>
+    <form class="form-container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <mat-form-field>
+        <input matInput ngModel name='username' required>
+        <mat-placeholder><mat-icon>account_circle</mat-icon> Username</mat-placeholder>
+        <mat-error><strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput ngModel name='password' type="password" required>
+        <mat-placeholder><mat-icon>vpn_key</mat-icon> Password</mat-placeholder>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!f.valid">Login</button>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progress-bar"></mat-progress-bar>
+    </form>
+  </mat-card>
+</div>

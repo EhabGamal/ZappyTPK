@@ -10,12 +10,16 @@ import {
   MatInputModule,
   MatButtonModule } from '@angular/material';
 
+import { AuthService } from './services/auth.service';
+
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatListModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

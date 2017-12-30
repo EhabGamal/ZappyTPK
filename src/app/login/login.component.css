@@ -1,0 +1,27 @@
+.login-container {
+    width: 100%;
+}
+
+.login-container > .form-card {
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.login-container > .form-card > .mat-card-title,
+.login-container > .form-card > .mat-card-subtitle {
+    text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.form-container > .progress-bar {
+    margin-top: 20px;
+}
