@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import {
   MatIconModule,
   MatToolbarModule,
@@ -10,20 +12,27 @@ import {
   MatInputModule,
   MatButtonModule } from '@angular/material';
 
-import { AuthService } from './services/auth.service';
+  import { AuthGuard } from './services/auth-guard.service';
+  import { AuthService } from './services/auth.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
     MatToolbarModule,
     MatProgressBarModule,
     MatIconModule,
@@ -32,7 +41,7 @@ import { LoginComponent } from './login/login.component';
     MatInputModule,
     MatListModule
   ],
-  providers: [AuthService],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
