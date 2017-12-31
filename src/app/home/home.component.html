@@ -1,8 +1,20 @@
 
-<mat-toolbar color='warn' style="flex: 1 1 auto;">
-  <a href="#">Test Link</a>
+<mat-toolbar color='warn'>
+  <button mat-icon-button>
+    <mat-icon>verified_user</mat-icon>
+    <span style="font-size: 150%; font-weight:bold;">Zappy</span>
+  </button>
+  <span class="fill-remaining-space"></span>
+  <button mat-button (click)="loadTweets()">
+    <mat-icon>refresh</mat-icon>
+    <span>Refresh</span>
+  </button>
+  <button mat-button (click)="logout()">
+    <mat-icon>forward</mat-icon>
+    <span>Logout</span>
+  </button>
 </mat-toolbar>
-<div class="tweets-container">
+<div class="tweets-container" *ngIf="!loading">
   <mat-card *ngFor="let tweet of tweets" class="example-card">
       <mat-card-header>
         <div mat-card-avatar>
@@ -27,5 +39,6 @@
       </mat-card-actions>
     </mat-card>
 </div>
-
-<button mat-raised-button color="primary" routerLink="/login">Login</button>
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner mode='indeterminate' color='warn'></mat-spinner>
+</div>

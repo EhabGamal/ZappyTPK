@@ -6,10 +6,31 @@
 
 .tweets-container {
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e6ecf0;
 }
 
 .tweets-container > .mat-card {
     width: 600px;
     margin: auto;
     margin-bottom: 10px;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.spinner-container {
+    width: 100%;
+    text-align: center;
+}
+
+.spinner-container > .mat-spinner {
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
