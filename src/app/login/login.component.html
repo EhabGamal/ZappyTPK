@@ -17,7 +17,7 @@
         <input matInput ngModel name='password' type="password" required>
         <mat-placeholder><mat-icon>vpn_key</mat-icon> Password</mat-placeholder>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!f.valid">Login</button>
+      <button mat-raised-button color="warn" type="submit" [disabled]="!f.valid">Login</button>
       <mat-progress-bar *ngIf="loading" mode="indeterminate" class="progress-bar"></mat-progress-bar>
     </form>
   </mat-card>
